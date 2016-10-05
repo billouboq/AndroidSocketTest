@@ -7,7 +7,7 @@ const io = require('socket.io')(server);
 io.on('connection', (socket) => {
 
    socket.on('message', (message) => {
-      socket.emit('messageReceived');
+      socket.broadcast.emit('message', message);
    });
 
 })
